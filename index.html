@@ -7,97 +7,117 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="google-site-verification" content="asa7BomdUKJ2fiHcu9xoSnpKrqAcqotHXIDX3deimCM" />
-        <link type="stylesheet" href="static/css/cats-can.css">
+        <link rel="stylesheet" href="static/css/cats-can.css">
         <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
         <script>window.Modernizr || document.write('<script src="http://s.diaf.co/uv/djfrontend/js/modernizr/2.8.2/modernizr.min.js"><\/script>')</script>
+        <script>
+            WebFontConfig = {
+                google: { families: [ 'Molengo::latin' ] }
+            };
+            (function() {
+                var wf = document.createElement('script');
+                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+                wf.type = 'text/javascript';
+                wf.async = 'true';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wf, s);
+            })();
+        </script>
     </head>
     <body>
         <!--[if lt IE 8]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <nav>
-            <a href="/">Cat's Can!</a>
-            <a href="#who">Who?</a>
-            <a href="#what">What?</a>
-            <a href="#when">When?</a>
-            <a href="#why">Why?</a>
-            <a href="#how">How?</a>
+        <nav class="nav">
+            <div class="wrapper">
+                <a href="/" class="nav__anchor--logo">Cat's Can!</a>
+                <a href="#who" class="nav__anchor--who">Who?</a>
+                <a href="#what" class="nav__anchor--what">What?</a>
+                <a href="#when" class="nav__anchor--when">When?</a>
+                <a href="#why" class="nav__anchor--why">Why?</a>
+                <a href="#how" class="nav__anchor--how">How?</a>
+            </div><!-- /wrapper -->
         </nav>
 
-        <section>
-            <ul>
-                <li>Cat's can recycle!</li>
-                <li>Cat's can support local charities!</li>
-                <li>Cat's can change the world!</li>
-            </ul>
-        </section>
+        <div class="wrapper--content">
 
-        <section>
-            <h1>What is Cat's Can!?</h1>
+            <section>
+                <ul>
+                    <li>Cat's can recycle!</li>
+                    <li>Cat's can support local charities!</li>
+                    <li>Cat's can change the world!</li>
+                    <li>Cat's Can!</li>
+                </ul>
+            </section>
 
-            <p>Cat's Can! is a supporting organization*, whose intended goal is to support local charities while supporting the Earth through recycling.</p>
+            <section id="what">
+                <h1>What is Cat's Can!?</h1>
 
-            <p>Aluminum cans are collected and recycled at the current return rate, with all proceeds going towards a local charity.</p>
+                <p>Cat's Can! is a supporting organization*, whose intended goal is to support local charities while supporting the Earth through recycling.</p>
 
-            <p>Local charities will be selected and will change each collection period (based on time and/or monetary amount.)</p>
-        </section>
+                <p>Aluminum cans are collected and recycled at the current return rate, with all proceeds going towards a local charity.</p>
 
-        <section>
-            <h1>Why Cat's Can!?</h1>
+                <p>Local charities will be selected and will change each collection period (based on time and/or monetary amount.)</p>
+            </section>
 
-            <p>Recycling is important. Supporting local charities is important. Combining the two is simply logical.</p>
-        </section>
+            <section id="why">
+                <h1>Why Cat's Can!?</h1>
 
-        <section>
-            <h1>How can you help Cat's Can!?</h1>
+                <p>Recycling is important. Supporting local charities is important. Combining the two is simply logical.</p>
+            </section>
 
-            <h2>Individuals</h2>
+            <section id="how">
+                <h1>How can you help Cat's Can!?</h1>
 
-            <p>Simple! Save your aluminum cans, bring them to us, or arrange for a pickup.</p>
+                <h2>Individuals</h2>
 
-            <h2>Businesses</h2>
+                <p>Simple! Save your aluminum cans, bring them to us, or arrange for a pickup.</p>
 
-            <p>Simple! Save your aluminum cans, bring them to us, or arrange for a pickup.</p>
+                <h2>Businesses</h2>
 
-            <p>If a new container for recycling would further the idea within your business, we can discuss a material donation. In other words, Cat's Can! will purchase a container for you, with your committment to participate.</p>
+                <p>Simple! Save your aluminum cans, bring them to us, or arrange for a pickup.</p>
 
-            <h2>Charities</h2>
+                <p>If a new container for recycling would further the idea within your business, we can discuss a material donation. In other words, Cat's Can! will purchase a container for you, with your committment to participate.</p>
 
-            <p>Simple! Save your aluminum cans, bring them to us, or arrange for a pickup.</p>
+                <h2>Charities</h2>
 
-            <p>If you want to be added to our list of local charities, please contact us.</p>
+                <p>Simple! Save your aluminum cans, bring them to us, or arrange for a pickup.</p>
 
-            <p>Hopefully you've noticed that helping Cat's Can! is simple. You can also help by spreading the word.</p>
-        </section>
+                <p>If you want to be added to our list of local charities, please contact us.</p>
 
-        <section>
-            <h1>When can you help Cat's Can!?</h1>
+                <p>Hopefully you've noticed that helping Cat's Can! is simple. You can also help by spreading the word.</p>
+            </section>
 
-            <p>Right now! Well, maybe tomorrow - the point is to get involved soon. More people involved means more aluminum cans; more cans means more money for local charities; more means money more support.</p>
-        </section>
+            <section id="how">
+                <h1>When can you help Cat's Can!?</h1>
 
-        <section>
-            <h1>Who runs Cat's Can!?</h1>
+                <p>Right now! Well, maybe tomorrow - the point is to get involved soon. More people involved means more aluminum cans; more cans means more money for local charities; more means money more support.</p>
+            </section>
 
-            <p>Cat's Can! is the brainchild of Jon Faustman. Upon seeing an abundant amount of Tallgrass cans in one of Howie's existing charity bins, collecting aluminum cans from local businesses for local charities seemed like a foregone conclusion.</p>
-        </section>
+            <section id="who">
+                <h1>Who runs Cat's Can!?</h1>
 
-        <footer>
-            <p>*Cat's Can! is not yet an IRS recognized supporting organization.</p>
+                <p>Cat's Can! is the brainchild of Jon Faustman. Upon seeing an abundant amount of Tallgrass cans in one of Howie's existing charity bins, collecting aluminum cans from local businesses for the benefit of local charities seemed like a foregone conclusion.</p>
+            </section>
+
+        </div><!-- /wrapper -->
+
+        <footer class="wrapper--footer">
+            <p>*Cat's Can! is not yet an IRS-recognized supporting organization.</p>
 
             <p>Cat's Can! is an independent supporting organization and is not affiliated with Kansas State University.</p>
         </footer>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="http://s.diaf.co/uv/djfrontend/js/jquery/1.11.1/jquery.min.js"><\/script>')</script>
-        <script>
+        <!--<script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
             e=o.createElement(i);r=o.getElementsByTagName(i)[0];
             e.src='//www.google-analytics.com/analytics.js';
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-5638086-11','cats-can.com');ga('send','pageview');
-        </script>
+        </script>-->
     </body>
 </html>

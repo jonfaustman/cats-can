@@ -1,1 +1,68 @@
+.wf-loading
+    visibility: hidden
+
 @import base
+
+html
+    +font($family: unquote('Arial, sans-serif'), $size: $base-font-size, $height: $base-line-height, $shorthand: true)
+    background-color: tint($ksu-purple, 12%)
+    color: shade($white, 3%)
+    min-width: em(320px)
+
+a
+    color: inherit
+    text-decoration: none
+
+blockquote,
+dl,
+ol,
+p,
+ul
+    @extend %base-vertical-rhythm
+
+
+h1
+    +hN($size: 36px)
+    +text-shadow(3px 3px 3px rgba(0,0,0,.15))
+    +wf-font($wf-family: Molengo)
+    margin-bottom: em($base-vertical-rhythm, $base: 36px)
+
+
+h2
+    +hN($size: 28px)
+    +text-shadow(1px 0 3px rgba(0,0,0,.15))
+    +wf-font($wf-family: Molengo)
+    margin-bottom: em($base-vertical-rhythm, $base: 36px)
+
+
+.wrapper
+    +box-sizing(border-box)
+    margin: 0 auto
+    +respond-to(desktop)
+        max-width: em(1024px)
+        padding: em($base-vertical-rhythm) em($base-vertical-rhythm) em($base-vertical-rhythm / 2)
+
+    @at-root &--content
+        @extend .wrapper
+        +box-shadow(-1px 0px 3px rgba(0,0,0,.15), 3px 3px 3px rgba(0,0,0,.15))
+
+    @at-root &--footer
+        @extend .wrapper
+        +font($size: 12px)
+
+.nav
+    background-color: shade($ksu-purple, 12%)
+
+    @at-root &__anchor
+        +font($size: 36px, $height: 64px)
+        +wf-font($wf-family: Molengo)
+        vertical-align: middle
+
+        $anchor-list: who what when where why how
+        @each $anchor in $anchor-list
+            @at-root &--#{$anchor}
+                @extend .nav__anchor
+
+        @at-root &--logo
+            @extend .nav__anchor
+            +font($size: 64px)

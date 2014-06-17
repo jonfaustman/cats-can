@@ -1,4 +1,7 @@
-/* line 5, ../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
+.wf-loading {
+  visibility: hidden;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,45 +23,123 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../.rvm/gems/ruby-2.1.1/gems/compass-core-1.0.0.alpha.19/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
+}
+
+blockquote,
+dl,
+ol,
+p,
+ul {
+  margin-bottom: 1.3125em;
+}
+
+h1, h2 {
+  text-redering: optimizeLegibility;
+}
+
+html {
+  font: normal normal normal 16px/1.3 Arial, sans-serif;
+  font-size: 1rem;
+  background-color: #654196;
+  color: #f7f7f7;
+  min-width: 20em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 36px;
+  font-size: 2.25rem;
+  line-height: 1;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
+  margin-bottom: 0.58333em;
+}
+.wf-active h1 {
+  font-family: Molengo;
+}
+
+h2 {
+  font-size: 28px;
+  font-size: 1.75rem;
+  line-height: 1;
+  text-shadow: 1px 0 3px rgba(0, 0, 0, 0.15);
+  margin-bottom: 0.58333em;
+}
+.wf-active h2 {
+  font-family: Molengo;
+}
+
+.wrapper, .wrapper--content, .wrapper--footer {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+@media only screen and (min-width: 769px) {
+  .wrapper, .wrapper--content, .wrapper--footer {
+    max-width: 64em;
+    padding: 1.3125em 1.3125em 0.65625em;
+  }
+}
+.wrapper--content {
+  -moz-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+}
+.wrapper--footer {
+  font-size: 12px;
+  font-size: 0.75rem;
+}
+
+.nav {
+  background-color: #472377;
+}
+.nav__anchor, .nav__anchor--who, .nav__anchor--what, .nav__anchor--when, .nav__anchor--where, .nav__anchor--why, .nav__anchor--how, .nav__anchor--logo {
+  font-size: 36px;
+  font-size: 2.25rem;
+  line-height: 64px;
+  vertical-align: middle;
+}
+.wf-active .nav__anchor, .wf-active .nav__anchor--who, .wf-active .nav__anchor--what, .wf-active .nav__anchor--when, .wf-active .nav__anchor--where, .wf-active .nav__anchor--why, .wf-active .nav__anchor--how, .wf-active .nav__anchor--logo {
+  font-family: Molengo;
+}
+.nav__anchor--logo {
+  font-size: 64px;
+  font-size: 4rem;
 }
