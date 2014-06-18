@@ -34,11 +34,12 @@ $base-respond-to-desktop: 769px !default
     @return $num / ($num * 0 + 1)
 
 %hN
-    text-redering: optimizeLegibility
+    text-rendering: optimizeLegibility
 
 @mixin hN($size)
     $size: ceil($size)
-    +font($size: $size, $height: 1)
+    +font($size: $size, $family: unquote('Arial, sans-serif'), $height: 1)
+    +wf-font($wf-family: Molengo, $wf-hide: true)
     @extend %hN
 
 

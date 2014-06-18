@@ -3,10 +3,20 @@
 
 @import base
 
+@font-face
+    font-family: 'Molengo'
+    font-style: normal
+    font-weight: 400
+    src: local('Molengo'), local('Molengo-Regular'), url(http://themes.googleusercontent.com/static/fonts/molengo/v5/2v3ScQ0eE96oPRRr3d-FjgLUuEpTyoUstqEm5AMlJo4.woff) format('woff')
+
+
+%box
+    +box-shadow(-1px 0px 3px rgba(0,0,0,.15), 3px 3px 3px rgba(0,0,0,.15))
+
 html
-    +font($family: unquote('Arial, sans-serif'), $size: $base-font-size, $height: $base-line-height, $shorthand: true)
+    +font($family: unquote('Georgia, serif'), $size: $base-font-size, $height: $base-line-height, $shorthand: true)
     background-color: tint($ksu-purple, 12%)
-    color: shade($white, 3%)
+    color: shade($white, 12%)
     min-width: em(320px)
 
 a
@@ -22,47 +32,127 @@ ul
 
 
 h1
-    +hN($size: 36px)
+    $size: 39px
+    +hN($size: $size)
     +text-shadow(3px 3px 3px rgba(0,0,0,.15))
-    +wf-font($wf-family: Molengo)
-    margin-bottom: em($base-vertical-rhythm, $base: 36px)
+    border-bottom: 2px dashed shade($white, 3%)
+    color: shade($white, 6%)
+    display: inline-block
+    margin-bottom: em(15px, $base: $size)
+    padding-bottom: em(4px, $base: $size)
 
 
 h2
-    +hN($size: 28px)
-    +text-shadow(1px 0 3px rgba(0,0,0,.15))
-    +wf-font($wf-family: Molengo)
-    margin-bottom: em($base-vertical-rhythm, $base: 36px)
+    $size: 26px
+    +hN($size: $size)
+    +text-shadow(1px 1px 3px rgba(0,0,0,.15))
+    color: shade($white, 9%)
+    margin-bottom: em($base-vertical-rhythm, $base: $size)
 
 
 .wrapper
-    +box-sizing(border-box)
-    margin: 0 auto
-    +respond-to(desktop)
-        max-width: em(1024px)
-        padding: em($base-vertical-rhythm) em($base-vertical-rhythm) em($base-vertical-rhythm / 2)
+
+    @at-root &--nav
+        +box-shadow(0 1px 3px rgba(0,0,0,.15))
+        background-color: shade($ksu-purple, 3%)
+        position: relative
+        width: 100%
+
+    @at-root &--inner
+        +box-sizing(border-box)
+        margin: 0 auto
+
+        +respond-to(tablet)
+            max-width: 768px
 
     @at-root &--content
-        @extend .wrapper
-        +box-shadow(-1px 0px 3px rgba(0,0,0,.15), 3px 3px 3px rgba(0,0,0,.15))
+        @extend .wrapper--inner
+        @extend %box
+        background-color: tint($ksu-purple, 6%)
+        margin-bottom: em($base-vertical-rhythm * 2)
+        margin-top: em($base-vertical-rhythm * 2)
+        padding: em($base-vertical-rhythm) em($base-vertical-rhythm) em($base-vertical-rhythm / 2)
 
-    @at-root &--footer
-        @extend .wrapper
-        +font($size: 12px)
+    @at-root &--section
+        margin-bottom: em($base-vertical-rhythm * 4)
+
+        &:last-of-type
+            margin-bottom: 0
 
 .nav
-    background-color: shade($ksu-purple, 12%)
+    $size: 22px
+    +font($size: $size, $height: 1)
+    color: $white
+    position: relative
+
+    %nav__anchor
+        display: inline-block
+        vertical-align: middle
 
     @at-root &__anchor
-        +font($size: 36px, $height: 64px)
-        +wf-font($wf-family: Molengo)
-        vertical-align: middle
+        top: 30px
+        left: 124px
+        margin-bottom: 0
+        position: absolute
+
+        .affix &
+            top: 0
+
+        > li
+            display: inline
 
         $anchor-list: who what when where why how
         @each $anchor in $anchor-list
             @at-root &--#{$anchor}
-                @extend .nav__anchor
+                @extend %nav__anchor
+                +transition(all 1s)
+                padding: em($base-vertical-rhythm / 2, $base: $size)
 
-        @at-root &--logo
-            @extend .nav__anchor
-            +font($size: 64px)
+                &:active,
+                &:focus,
+                &:hover
+                    @extend %box
+                    background-color: shade($ksu-purple, 24%)
+
+    @at-root &__logo
+        $size: 52px
+        @extend %nav__anchor
+        +font($size: $size, $family: unquote('Arial, sans-serif'), $height: .8)
+        +wf-font($wf-family: Molengo, $wf-hide: true)
+        +text-shadow(3px 3px 0px rgba(0,0,0,.25))
+        +transition(all .5s)
+        padding: em($base-vertical-rhythm / 2, $base: $size) 0
+
+        .affix &
+            +font($size: 26px)
+
+    @at-root &__tag-line
+        +font($size: 10px, $height: 1)
+        +text-shadow(1px 1px 1px rgba(0,0,0,.15))
+        bottom: 13px
+        color: tint($ksu-purple, 24%)
+        left: 134px
+        margin-bottom: 0
+        position: absolute
+        text-transform: uppercase
+
+        > li
+            display: inline
+            padding-right: em($base-vertical-rhythm, $base: 10px)
+            &:last-child
+                padding-right: 0
+
+
+.footer
+    +font($size: 12px)
+
+
+.affix
+    +box-shadow(0 3px 3px rgba(0,0,0,.15))
+    background-color: rgba(78, 38, 131, .9)
+    position: fixed
+    top: 0
+
+
+.br
+    display: block
