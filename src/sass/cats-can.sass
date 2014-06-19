@@ -39,7 +39,7 @@ ul
 
 
 h1
-    $size: 39px
+    $size: 41px
     +hN($size: $size)
     +text-shadow(3px 3px 3px rgba(0,0,0,.15))
     border-bottom: 2px dashed shade($white, 12%)
@@ -50,7 +50,7 @@ h1
 
 
 h2
-    $size: 26px
+    $size: 33px
     +hN($size: $size)
     +text-shadow(1px 1px 3px rgba(0,0,0,.15))
     color: shade($white, 9%)
@@ -95,21 +95,24 @@ h2
         margin-top: em($base-vertical-rhythm * 2)
         padding: em($base-vertical-rhythm) em($base-vertical-rhythm) em($base-vertical-rhythm / 2)
 
+        &:last-of-type
+            margin-bottom: em($base-vertical-rhythm)
+
 .nav
     +transition(min-height 1s)
     color: $white
-    min-height: 105px
+    min-height: 120px
     position: relative
 
     .affix &
-        min-height: 50px
+        min-height: 60px
 
     @at-root &__anchor
         +transition(color .5s)
         left: 124px
         margin-bottom: 0
         position: absolute
-        top: 30px
+        top: 28px
 
         .affix &
             color: tint($ksu-purple, 54%)
@@ -128,7 +131,7 @@ h2
         $anchor-list: who what when where why how
         @each $anchor in $anchor-list
             @at-root &--#{$anchor}
-                $size: 22px
+                $size: 26px
                 +font($size: $size, $family: unquote('Arial, sans-serif'), $height: .8)
                 +transition(all 1s)
                 +wf-font($wf-family: Molengo, $wf-hide: true)
@@ -149,20 +152,21 @@ h2
         +text-shadow(3px 3px 0px rgba(0,0,0,.25))
         +transition(font-size .75s)
         display: inline-block
-        padding: em($base-vertical-rhythm / 2, $base: $size) 0
+        margin: em($base-vertical-rhythm, $base: $size) 0
         vertical-align: middle
 
         .affix &
-            +font($size: 26px)
+            +font($size: 31px)
             left: 50px
+            margin: 0
             position: absolute
-            top: 0
+            top: 7px
 
     @at-root &__tag-line
         +font($size: 10px, $height: 1)
         +text-shadow(1px 1px 1px rgba(0,0,0,.15))
         +transition(color 1.25s)
-        bottom: 13px
+        bottom: 28px
         color: tint($ksu-purple, 54%)
         left: 134px
         margin-bottom: 0
@@ -181,14 +185,14 @@ h2
 
 
 .footer
-    +font($size: 12px)
+    +font($size: 13px)
     position: relative
 
     @at-root &__nav
         +font($size: 39px)
         position: absolute
         right: 0
-        top: -($base-vertical-rhythm * 3)
+        top: -($base-vertical-rhythm / 2)
 
 
 .br

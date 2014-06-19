@@ -2137,15 +2137,15 @@ a:active, a:focus, a:hover {
 
 h1 {
   font-family: Arial, sans-serif;
-  font-size: 39px;
-  font-size: 1.95rem;
+  font-size: 41px;
+  font-size: 2.05rem;
   line-height: 1;
   text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
   border-bottom: 2px dashed #e0e0e0;
   color: #efefef;
   display: inline-block;
-  margin-bottom: 0.38462em;
-  padding-bottom: 0.10256em;
+  margin-bottom: 0.36585em;
+  padding-bottom: 0.09756em;
 }
 .wf-loading h1 {
   visibility: hidden;
@@ -2156,12 +2156,12 @@ h1 {
 
 h2 {
   font-family: Arial, sans-serif;
-  font-size: 26px;
-  font-size: 1.3rem;
+  font-size: 33px;
+  font-size: 1.65rem;
   line-height: 1;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
   color: #e8e8e8;
-  margin-bottom: 1em;
+  margin-bottom: 0.78788em;
 }
 .wf-loading h2 {
   visibility: hidden;
@@ -2213,6 +2213,9 @@ h2 {
   margin-top: 2.6em;
   padding: 1.3em 1.3em 0.65em;
 }
+.wrapper--section:last-of-type {
+  margin-bottom: 1.3em;
+}
 
 .nav {
   -moz-transition: min-height 1s;
@@ -2220,11 +2223,11 @@ h2 {
   -webkit-transition: min-height 1s;
   transition: min-height 1s;
   color: white;
-  min-height: 105px;
+  min-height: 120px;
   position: relative;
 }
 .affix .nav {
-  min-height: 50px;
+  min-height: 60px;
 }
 .nav__anchor {
   -moz-transition: color 0.5s;
@@ -2234,7 +2237,7 @@ h2 {
   left: 124px;
   margin-bottom: 0;
   position: absolute;
-  top: 30px;
+  top: 28px;
 }
 .affix .nav__anchor {
   color: #ae9cc8;
@@ -2254,15 +2257,15 @@ h2 {
 }
 .nav__anchor--who {
   font-family: Arial, sans-serif;
-  font-size: 22px;
-  font-size: 1.1rem;
+  font-size: 26px;
+  font-size: 1.3rem;
   line-height: 0.8;
   -moz-transition: all 1s;
   -o-transition: all 1s;
   -webkit-transition: all 1s;
   transition: all 1s;
   display: inline-block;
-  padding: 0.59091em;
+  padding: 0.5em;
   vertical-align: middle;
 }
 .wf-loading .nav__anchor--who {
@@ -2276,15 +2279,15 @@ h2 {
 }
 .nav__anchor--what {
   font-family: Arial, sans-serif;
-  font-size: 22px;
-  font-size: 1.1rem;
+  font-size: 26px;
+  font-size: 1.3rem;
   line-height: 0.8;
   -moz-transition: all 1s;
   -o-transition: all 1s;
   -webkit-transition: all 1s;
   transition: all 1s;
   display: inline-block;
-  padding: 0.59091em;
+  padding: 0.5em;
   vertical-align: middle;
 }
 .wf-loading .nav__anchor--what {
@@ -2298,15 +2301,15 @@ h2 {
 }
 .nav__anchor--when {
   font-family: Arial, sans-serif;
-  font-size: 22px;
-  font-size: 1.1rem;
+  font-size: 26px;
+  font-size: 1.3rem;
   line-height: 0.8;
   -moz-transition: all 1s;
   -o-transition: all 1s;
   -webkit-transition: all 1s;
   transition: all 1s;
   display: inline-block;
-  padding: 0.59091em;
+  padding: 0.5em;
   vertical-align: middle;
 }
 .wf-loading .nav__anchor--when {
@@ -2320,15 +2323,15 @@ h2 {
 }
 .nav__anchor--where {
   font-family: Arial, sans-serif;
-  font-size: 22px;
-  font-size: 1.1rem;
+  font-size: 26px;
+  font-size: 1.3rem;
   line-height: 0.8;
   -moz-transition: all 1s;
   -o-transition: all 1s;
   -webkit-transition: all 1s;
   transition: all 1s;
   display: inline-block;
-  padding: 0.59091em;
+  padding: 0.5em;
   vertical-align: middle;
 }
 .wf-loading .nav__anchor--where {
@@ -2342,15 +2345,15 @@ h2 {
 }
 .nav__anchor--why {
   font-family: Arial, sans-serif;
-  font-size: 22px;
-  font-size: 1.1rem;
+  font-size: 26px;
+  font-size: 1.3rem;
   line-height: 0.8;
   -moz-transition: all 1s;
   -o-transition: all 1s;
   -webkit-transition: all 1s;
   transition: all 1s;
   display: inline-block;
-  padding: 0.59091em;
+  padding: 0.5em;
   vertical-align: middle;
 }
 .wf-loading .nav__anchor--why {
@@ -2364,15 +2367,15 @@ h2 {
 }
 .nav__anchor--how {
   font-family: Arial, sans-serif;
-  font-size: 22px;
-  font-size: 1.1rem;
+  font-size: 26px;
+  font-size: 1.3rem;
   line-height: 0.8;
   -moz-transition: all 1s;
   -o-transition: all 1s;
   -webkit-transition: all 1s;
   transition: all 1s;
   display: inline-block;
-  padding: 0.59091em;
+  padding: 0.5em;
   vertical-align: middle;
 }
 .wf-loading .nav__anchor--how {
@@ -2394,7 +2397,7 @@ h2 {
   -webkit-transition: font-size 0.75s;
   transition: font-size 0.75s;
   display: inline-block;
-  padding: 0.25em 0;
+  margin: 0.5em 0;
   vertical-align: middle;
 }
 .wf-loading .nav__logo {
@@ -2404,11 +2407,12 @@ h2 {
   font-family: Molengo;
 }
 .affix .nav__logo {
-  font-size: 26px;
-  font-size: 1.3rem;
+  font-size: 31px;
+  font-size: 1.55rem;
   left: 50px;
+  margin: 0;
   position: absolute;
-  top: 0;
+  top: 7px;
 }
 .nav__tag-line {
   font-size: 10px;
@@ -2419,7 +2423,7 @@ h2 {
   -o-transition: color 1.25s;
   -webkit-transition: color 1.25s;
   transition: color 1.25s;
-  bottom: 13px;
+  bottom: 28px;
   color: #ae9cc8;
   left: 134px;
   margin-bottom: 0;
@@ -2439,8 +2443,8 @@ h2 {
 }
 
 .footer {
-  font-size: 12px;
-  font-size: 0.6rem;
+  font-size: 13px;
+  font-size: 0.65rem;
   position: relative;
 }
 .footer__nav {
@@ -2448,7 +2452,7 @@ h2 {
   font-size: 1.95rem;
   position: absolute;
   right: 0;
-  top: -78px;
+  top: -13px;
 }
 
 .br {
