@@ -15,13 +15,20 @@
 
 html
     +font($family: unquote('Georgia, serif'), $size: $base-font-size, $height: $base-line-height, $shorthand: true)
+    font-size: percentage(20px/16px)
     background-color: tint($ksu-purple, 12%)
     color: shade($white, 12%)
     min-width: em(320px)
 
 a
+    +transition(color 1s)
     color: inherit
     text-decoration: none
+
+    &:active,
+    &:focus,
+    &:hover
+        color: $white
 
 blockquote,
 dl,
@@ -35,7 +42,7 @@ h1
     $size: 39px
     +hN($size: $size)
     +text-shadow(3px 3px 3px rgba(0,0,0,.15))
-    border-bottom: 2px dashed shade($white, 3%)
+    border-bottom: 2px dashed shade($white, 12%)
     color: shade($white, 6%)
     display: inline-block
     margin-bottom: em(15px, $base: $size)
@@ -54,9 +61,19 @@ h2
 
     @at-root &--nav
         +box-shadow(0 1px 3px rgba(0,0,0,.15))
+        +transition(background-color 1s)
         background-color: shade($ksu-purple, 3%)
         position: relative
         width: 100%
+
+        &.affix
+            +box-shadow(0 3px 3px rgba(0,0,0,.15))
+            background-color: rgba(78, 38, 131, .9)
+            position: fixed
+            top: 0
+
+            + .wrapper--content
+                margin-top: em($base-vertical-rhythm * 8)
 
     @at-root &--inner
         +box-sizing(border-box)
@@ -67,46 +84,57 @@ h2
 
     @at-root &--content
         @extend .wrapper--inner
+
+        a
+            border-bottom: 1px dashed shade($white, 12%)
+
+    @at-root &--section
         @extend %box
         background-color: tint($ksu-purple, 6%)
-        margin-bottom: em($base-vertical-rhythm * 2)
+        margin-bottom: em($base-vertical-rhythm * 4)
         margin-top: em($base-vertical-rhythm * 2)
         padding: em($base-vertical-rhythm) em($base-vertical-rhythm) em($base-vertical-rhythm / 2)
 
-    @at-root &--section
-        margin-bottom: em($base-vertical-rhythm * 4)
-
-        &:last-of-type
-            margin-bottom: 0
-
 .nav
-    $size: 22px
-    +font($size: $size, $height: 1)
+    +transition(min-height 1s)
     color: $white
+    min-height: 105px
     position: relative
 
-    %nav__anchor
-        display: inline-block
-        vertical-align: middle
+    .affix &
+        min-height: 50px
 
     @at-root &__anchor
-        top: 30px
+        +transition(color .5s)
         left: 124px
         margin-bottom: 0
         position: absolute
+        top: 30px
 
         .affix &
+            color: tint($ksu-purple, 54%)
             top: 0
 
         > li
+            +transition(all 1s)
             display: inline
+
+            &.active
+                @extend %box
+                color: $white !important
+                background-color: shade($ksu-purple, 24%)
+                padding: em($base-vertical-rhythm / 2, $base: 22px) 0
 
         $anchor-list: who what when where why how
         @each $anchor in $anchor-list
             @at-root &--#{$anchor}
-                @extend %nav__anchor
+                $size: 22px
+                +font($size: $size, $family: unquote('Arial, sans-serif'), $height: .8)
                 +transition(all 1s)
+                +wf-font($wf-family: Molengo, $wf-hide: true)
+                display: inline-block
                 padding: em($base-vertical-rhythm / 2, $base: $size)
+                vertical-align: middle
 
                 &:active,
                 &:focus,
@@ -116,25 +144,34 @@ h2
 
     @at-root &__logo
         $size: 52px
-        @extend %nav__anchor
-        +font($size: $size, $family: unquote('Arial, sans-serif'), $height: .8)
+        +font($size: $size, $family: unquote('Arial, sans-serif'), $height: .8, $spacing: -1px, $shorthand: true)
         +wf-font($wf-family: Molengo, $wf-hide: true)
         +text-shadow(3px 3px 0px rgba(0,0,0,.25))
-        +transition(all .5s)
+        +transition(font-size .75s)
+        display: inline-block
         padding: em($base-vertical-rhythm / 2, $base: $size) 0
+        vertical-align: middle
 
         .affix &
             +font($size: 26px)
+            left: 50px
+            position: absolute
+            top: 0
 
     @at-root &__tag-line
         +font($size: 10px, $height: 1)
         +text-shadow(1px 1px 1px rgba(0,0,0,.15))
+        +transition(color 1.25s)
         bottom: 13px
-        color: tint($ksu-purple, 24%)
+        color: tint($ksu-purple, 54%)
         left: 134px
         margin-bottom: 0
         position: absolute
         text-transform: uppercase
+
+        .affix &
+            bottom: 1px
+            color: shade($white, 3%)
 
         > li
             display: inline
@@ -145,14 +182,24 @@ h2
 
 .footer
     +font($size: 12px)
+    position: relative
 
-
-.affix
-    +box-shadow(0 3px 3px rgba(0,0,0,.15))
-    background-color: rgba(78, 38, 131, .9)
-    position: fixed
-    top: 0
+    @at-root &__nav
+        +font($size: 39px)
+        position: absolute
+        right: 0
+        top: -($base-vertical-rhythm * 3)
 
 
 .br
     display: block
+
+.visuallyhidden
+    border: 0
+    clip: rect(0 0 0 0)
+    height: 1px
+    margin: -1px
+    overflow: hidden
+    padding: 0
+    position: absolute
+    width: 1px

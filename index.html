@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="google-site-verification" content="asa7BomdUKJ2fiHcu9xoSnpKrqAcqotHXIDX3deimCM" />
         <link rel="stylesheet" href="static/css/cats-can.css">
-        <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
         <script>window.Modernizr || document.write('<script src="http://s.diaf.co/uv/djfrontend/js/modernizr/2.8.2/modernizr.min.js"><\/script>')</script>
         <script>
             WebFontConfig = {
@@ -24,7 +24,7 @@
             })();
         </script>
     </head>
-    <body data-spy="scroll" data-target=".nav">
+    <body data-spy="scroll" data-target=".wrapper--nav">
         <!--[if lt IE 8]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -88,10 +88,10 @@
                 <p>Hopefully you’ve noticed that helping Cat’s Can! is simple. You can also help by spreading the word.</p>
             </section>
 
-            <section id="how" class="wrapper--section">
+            <section id="when" class="wrapper--section">
                 <h1>When can you help Cat’s Can!?</h1>
 
-                <p>Right now! Well, maybe tomorrow - the point is to get involved soon. More people involved means more aluminum cans; more cans means more money for local charities; more means money more support.</p>
+                <p>Right now! Well, maybe tomorrow &ndash; the point is to get involved soon. More people involved means more aluminum cans; more cans means more money for local charities; more means money more support.</p>
             </section>
 
             <section id="where" class="wrapper--section">
@@ -103,20 +103,30 @@
             <section id="who" class="wrapper--section">
                 <h1>Who runs Cat’s Can!?</h1>
 
-                <p>Cat’s Can! is the brainchild of Jon Faustman. Upon seeing an abundant amount of Tallgrass cans in one of Howie’s existing charity bins, collecting aluminum cans from local businesses for the benefit of local charities seemed like a foregone conclusion.</p>
+                <p>Cat’s Can! is the brainchild of <a href="http://jonfaustman.com/">Jon Faustman</a>. Upon seeing an abundant amount of <a href="http://www.tallgrassbeer.com/">Tallgrass</a> cans in one of <a href="http://www.howiesrecycling.com/">Howie’s</a> existing charity bins, collecting aluminum cans from local businesses for the benefit of local charities seemed like a foregone conclusion.</p>
             </section>
 
         </div><!-- /wrapper -->
 
         <footer class="footer wrapper--inner">
+            <nav class="footer__nav">
+                <a href="https://twitter.com/catscanmhk" class="fa fa-twitter"><i class="visuallyhidden">Follow us on Twitter</i></a>
+                <a href="https://www.facebook.com/CatsCanMHK" class="fa fa-facebook"><i class="visuallyhidden">Like us on Facebook</i></a>
+            </nav>
             <p>*Cat’s Can! is not yet an IRS-recognized supporting organization.</p>
 
             <p>Cat’s Can! is an independent supporting organization and is not affiliated with Kansas State University.</p>
         </footer>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="http://s.diaf.co/uv/djfrontend/js/jquery/1.11.1/jquery.min.js"><\/script>')</script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/1.4.13/jquery.smooth-scroll.min.js"></script>
+        <script>
+            $(function(){
+                $('.nav a').smoothScroll();
+            });
+        </script>
         <!--<script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
