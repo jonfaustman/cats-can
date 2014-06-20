@@ -28,7 +28,7 @@
         <!--[if lt IE 8]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="wrapper--nav" data-spy="affix" data-offset-top="50">
+        <div class="wrapper--nav" data-spy="affix" data-offset-top="60">
             <nav class="nav wrapper--inner">
                 <a href="/" class="nav__logo"><i class="br">Cat&#8217;s</i> Can!</a>
                 <ul class="nav__anchor">
@@ -128,9 +128,17 @@
         <script>
             $(function(){
                 $('.nav a').smoothScroll();
-                $('.nav__anchor').prepend('<a href="#" class="nav__anchor--js"><i class="visuallyhidden">Menu</i></a>');
+                $('.nav').append('<a href="#" class="nav__anchor--js"><i class="visuallyhidden">Menu</i></a>');
                 $('.nav__anchor--js').click(function(){
-                    $('.nav__anchor').toggle();
+                    $('.nav').toggleClass('nav--js-open');
+                    if ($('.nav').hasClass('nav--js-open'))
+                    {
+                        $('.nav__anchor').toggle(0);
+                    }
+                    else
+                    {
+                        $('.nav__anchor').toggle(0);
+                    }
                 });
             });
         </script>

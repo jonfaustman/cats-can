@@ -14,10 +14,12 @@ $box: -1px 0px 3px rgba(0,0,0,.15), 3px 3px 3px rgba(0,0,0,.15)
 
 html
     +font($family: unquote('Georgia, serif'), $size: $base-font-size, $height: $base-line-height, $shorthand: true)
-    font-size: percentage(20px/16px)
     background-color: tint($ksu-purple, 12%)
     color: shade($white, 12%)
+    font-size: 100%
     min-width: em(320px)
+    +respond-to(tablet)
+        font-size: percentage(20px/16px)
 
 a
     +transition(color 1s)
@@ -72,7 +74,11 @@ h2
             top: 0
 
             + .wrapper--content
-                margin-top: em($base-vertical-rhythm * 8)
+                margin-top: 138px
+
+            +respond-to(tablet)
+                + .wrapper--content
+                    margin-top: 198px
 
     @at-root &--inner
         +box-sizing(border-box)
@@ -92,9 +98,12 @@ h2
     @at-root &--section
         +box-shadow($box)
         background-color: tint($ksu-purple, 6%)
-        margin-bottom: em($base-vertical-rhythm * 4)
+        margin-bottom: em($base-vertical-rhythm * 2)
         margin-top: em($base-vertical-rhythm * 2)
         padding: em($base-vertical-rhythm) em($base-vertical-rhythm) em($base-vertical-rhythm / 2)
+
+        +respond-to(tablet)
+            margin-bottom: em($base-vertical-rhythm * 4)
 
         &:last-of-type
             margin-bottom: em($base-vertical-rhythm)
@@ -102,6 +111,7 @@ h2
 .nav
     +transition(min-height 1s)
     color: $white
+    min-height: 60px
     position: relative
 
     +respond-to(tablet)
@@ -110,23 +120,31 @@ h2
         .affix &
             min-height: 60px
 
+    @at-root &--js-open
+        min-height: 241px
+
     @at-root &__anchor
         +transition(color .5s)
-        display: inline-block
+        display: none
+        left: 81px
+        margin-bottom: 0
+        position: absolute
+        top: 11px
+        width: 50%
 
         +respond-to(tablet)
+            display: inline-block !important
             left: 124px
             margin-bottom: 0
             position: absolute
             top: 37px
+            width: auto
 
             .affix &
                 color: tint($ksu-purple, 54%)
                 top: 7px
 
         > li
-            display: none
-
             +respond-to(tablet)
                 +transition(box-shadow background-color 1s)
                 +transition(color .5s)
@@ -134,22 +152,24 @@ h2
                 line-height: .8
                 vertical-align: middle
 
-                &.active
-                    +box-shadow($box)
-                    background-color: $complement
-                    color: shade($ksu-purple, 24%)
+            &.active
+                +box-shadow($box)
+                background-color: $complement
+                color: shade($ksu-purple, 24%)
 
         @at-root &--js
 
             display: inline-block
 
             &:before
-                $size: 33px
+                $size: 39px
                 @extend .fa
                 +font($size: $size)
                 color: $white
                 content: "\f0c9"
-                margin: em($base-vertical-rhythm / 2, $base: $size) 0
+                position: absolute
+                right: 0
+                top: 11px
 
             +respond-to(tablet)
                 display: none
@@ -163,7 +183,10 @@ h2
                 +transition(color .5s)
                 +wf-font($wf-family: Molengo, $wf-hide: true)
                 display: block
-                padding: em($base-vertical-rhythm / 2, $base: $size)
+                padding: em($base-vertical-rhythm / 4, $base: $size) em($base-vertical-rhythm / 2, $base: $size)
+
+                +respond-to(tablet)
+                    padding: em($base-vertical-rhythm / 2, $base: $size)
 
                 &:active,
                 &:focus,
@@ -179,12 +202,13 @@ h2
         +text-shadow(3px 3px 0px rgba(0,0,0,.25))
         +transition(font-size .75s)
         display: inline-block
-        vertical-align: middle
+        left: 0
+        position: absolute
+        top: 6px
 
         +respond-to(tablet)
             $size: 52px
             +font($size: $size)
-            left: 0
             position: absolute
             top: 19px
 
