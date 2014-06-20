@@ -16,7 +16,6 @@ html
     +font($family: unquote('Georgia, serif'), $size: $base-font-size, $height: $base-line-height, $shorthand: true)
     background-color: tint($ksu-purple, 12%)
     color: shade($white, 12%)
-    font-size: 100%
     min-width: em(320px)
     +respond-to(tablet)
         font-size: percentage(20px/16px)
@@ -231,13 +230,14 @@ h2
 
 .footer
     +font($size: 13px)
+    margin-top: em($base-vertical-rhythm * 3, $base: 13px)
     position: relative
 
     @at-root &__nav
         +font($size: 39px)
         position: absolute
         right: 0
-        top: -($base-vertical-rhythm / 2)
+        top: -($base-vertical-rhythm * 2)
 
 
 .br

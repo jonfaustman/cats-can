@@ -2109,11 +2109,9 @@ h1, h2 {
   src: local("Molengo"), local("Molengo-Regular"), url(http://themes.googleusercontent.com/static/fonts/molengo/v5/2v3ScQ0eE96oPRRr3d-FjgLUuEpTyoUstqEm5AMlJo4.woff) format("woff");
 }
 html {
-  font: normal normal normal 20px/1.3 Georgia, serif;
-  font-size: 1rem;
+  font: normal normal normal 1rem/1.3 Georgia, serif;
   background-color: #654196;
   color: #e0e0e0;
-  font-size: 100%;
   min-width: 16em;
 }
 @media only screen and (min-width: 768px) {
@@ -2136,7 +2134,6 @@ a:active, a:focus, a:hover {
 
 h1 {
   font-family: Arial, sans-serif;
-  font-size: 41px;
   font-size: 2.05rem;
   line-height: 1;
   text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
@@ -2155,7 +2152,6 @@ h1 {
 
 h2 {
   font-family: Arial, sans-serif;
-  font-size: 33px;
   font-size: 1.65rem;
   line-height: 1;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
@@ -2304,7 +2300,6 @@ h2 {
   display: inline-block;
 }
 .nav__anchor--js:before {
-  font-size: 39px;
   font-size: 1.95rem;
   color: white;
   content: "\f0c9";
@@ -2319,7 +2314,6 @@ h2 {
 }
 .nav__anchor--who {
   font-family: Arial, sans-serif;
-  font-size: 26px;
   font-size: 1.3rem;
   -moz-transition: box-shadow background-color 1s;
   -o-transition: box-shadow background-color 1s;
@@ -2353,7 +2347,6 @@ h2 {
 }
 .nav__anchor--what {
   font-family: Arial, sans-serif;
-  font-size: 26px;
   font-size: 1.3rem;
   -moz-transition: box-shadow background-color 1s;
   -o-transition: box-shadow background-color 1s;
@@ -2387,7 +2380,6 @@ h2 {
 }
 .nav__anchor--when {
   font-family: Arial, sans-serif;
-  font-size: 26px;
   font-size: 1.3rem;
   -moz-transition: box-shadow background-color 1s;
   -o-transition: box-shadow background-color 1s;
@@ -2421,7 +2413,6 @@ h2 {
 }
 .nav__anchor--where {
   font-family: Arial, sans-serif;
-  font-size: 26px;
   font-size: 1.3rem;
   -moz-transition: box-shadow background-color 1s;
   -o-transition: box-shadow background-color 1s;
@@ -2455,7 +2446,6 @@ h2 {
 }
 .nav__anchor--why {
   font-family: Arial, sans-serif;
-  font-size: 26px;
   font-size: 1.3rem;
   -moz-transition: box-shadow background-color 1s;
   -o-transition: box-shadow background-color 1s;
@@ -2489,7 +2479,6 @@ h2 {
 }
 .nav__anchor--how {
   font-family: Arial, sans-serif;
-  font-size: 26px;
   font-size: 1.3rem;
   -moz-transition: box-shadow background-color 1s;
   -o-transition: box-shadow background-color 1s;
@@ -2522,8 +2511,7 @@ h2 {
   color: #3d1e67;
 }
 .nav__logo {
-  font: normal normal normal 31px/0.8 Arial, sans-serif;
-  font-size: 1.55rem;
+  font: normal normal normal 1.55rem/0.8 Arial, sans-serif;
   letter-spacing: -1px;
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
   -moz-transition: font-size 0.75s;
@@ -2543,13 +2531,11 @@ h2 {
 }
 @media only screen and (min-width: 768px) {
   .nav__logo {
-    font-size: 52px;
     font-size: 2.6rem;
     position: absolute;
     top: 19px;
   }
   .affix .nav__logo {
-    font-size: 31px;
     font-size: 1.55rem;
     left: 50px;
     margin: 0;
@@ -2559,7 +2545,6 @@ h2 {
 }
 
 .tag-line {
-  font-size: 31px;
   font-size: 1.55rem;
   line-height: 1;
   list-style: outside square;
@@ -2571,16 +2556,15 @@ h2 {
 }
 
 .footer {
-  font-size: 13px;
   font-size: 0.65rem;
+  margin-top: 6em;
   position: relative;
 }
 .footer__nav {
-  font-size: 39px;
   font-size: 1.95rem;
   position: absolute;
   right: 0;
-  top: -13px;
+  top: -52px;
 }
 
 .br {
