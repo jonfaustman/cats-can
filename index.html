@@ -39,12 +39,6 @@
                     <li><a href="#why" class="nav__anchor--why">Why?</a></li>
                     <li><a href="#how" class="nav__anchor--how">How?</a></li>
                 </ul>
-                <ul class="nav__tag-line">
-                    <li>Cat’s can recycle!</li>
-                    <li>Cat’s can support local charities!</li>
-                    <li>Cat’s can change the world!</li>
-                    <li>Cat’s Can!</li>
-                </ul>
             </nav>
         </div><!-- /wrapper -->
 
@@ -58,6 +52,13 @@
                 <p>Aluminum cans are collected and recycled at the current return rate, with all proceeds going towards a local charity.</p>
 
                 <p>Local charities will be selected and will change each collection period (based on time and/or monetary amount.)</p>
+
+                <ul class="tag-line">
+                    <li>Cat’s can recycle!</li>
+                    <li>Cat’s can support local charities!</li>
+                    <li>Cat’s can change the world!</li>
+                    <li>Cat’s Can!</li>
+                </ul>
             </section>
 
             <section id="why" class="wrapper--section">
@@ -86,6 +87,8 @@
                 <p>If you want to be added to our list of local charities, please contact us.</p>
 
                 <p>Hopefully you’ve noticed that helping Cat’s Can! is simple. You can also help by spreading the word.</p>
+
+                <p class="pr--hide">P.S., if you need a flyer to get your organization involved, try printing out this website&mdash;it makes a great flyer.</p>
             </section>
 
             <section id="when" class="wrapper--section">
@@ -125,6 +128,10 @@
         <script>
             $(function(){
                 $('.nav a').smoothScroll();
+                $('.nav__anchor').prepend('<a href="#" class="nav__anchor--js"><i class="visuallyhidden">Menu</i></a>');
+                $('.nav__anchor--js').click(function(){
+                    $('.nav__anchor').toggle();
+                });
             });
         </script>
         <!--<script>

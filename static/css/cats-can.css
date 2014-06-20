@@ -71,7 +71,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-weight: normal;
   font-style: normal;
 }
-.fa {
+.fa, .nav__anchor--js:before {
   display: inline-block;
   font-family: FontAwesome;
   font-style: normal;
@@ -143,10 +143,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   float: left;
 }
 
-.fa.pull-left {
+.fa.pull-left, .pull-left.nav__anchor--js:before {
   margin-right: .3em;
 }
-.fa.pull-right {
+.fa.pull-right, .pull-right.nav__anchor--js:before {
   margin-left: .3em;
 }
 
@@ -2108,12 +2108,6 @@ h1, h2 {
   font-weight: 400;
   src: local("Molengo"), local("Molengo-Regular"), url(http://themes.googleusercontent.com/static/fonts/molengo/v5/2v3ScQ0eE96oPRRr3d-FjgLUuEpTyoUstqEm5AMlJo4.woff) format("woff");
 }
-.wrapper--section, .nav__anchor > li.active, .nav__anchor--who:active, .nav__anchor--who:focus, .nav__anchor--who:hover, .nav__anchor--what:active, .nav__anchor--what:focus, .nav__anchor--what:hover, .nav__anchor--when:active, .nav__anchor--when:focus, .nav__anchor--when:hover, .nav__anchor--where:active, .nav__anchor--where:focus, .nav__anchor--where:hover, .nav__anchor--why:active, .nav__anchor--why:focus, .nav__anchor--why:hover, .nav__anchor--how:active, .nav__anchor--how:focus, .nav__anchor--how:hover {
-  -moz-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
-  -webkit-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
-  box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
-}
-
 html {
   font: normal normal normal 20px/1.3 Georgia, serif;
   font-size: 1rem;
@@ -2141,8 +2135,8 @@ h1 {
   font-size: 2.05rem;
   line-height: 1;
   text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
-  border-bottom: 2px dashed #e0e0e0;
-  color: #efefef;
+  border-bottom: 2px dashed #e0cb00;
+  color: #e0cb00;
   display: inline-block;
   margin-bottom: 0.36585em;
   padding-bottom: 0.09756em;
@@ -2197,10 +2191,12 @@ h2 {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  margin: 0 auto;
+  margin: 0 1.3em;
+  max-width: 767px;
 }
 @media only screen and (min-width: 768px) {
   .wrapper--inner, .wrapper--content {
+    margin: 0 auto;
     max-width: 768px;
   }
 }
@@ -2208,6 +2204,9 @@ h2 {
   border-bottom: 1px dashed #e0e0e0;
 }
 .wrapper--section {
+  -moz-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
   background-color: #5b348f;
   margin-bottom: 5.2em;
   margin-top: 2.6em;
@@ -2223,50 +2222,91 @@ h2 {
   -webkit-transition: min-height 1s;
   transition: min-height 1s;
   color: white;
-  min-height: 120px;
   position: relative;
 }
-.affix .nav {
-  min-height: 60px;
+@media only screen and (min-width: 768px) {
+  .nav {
+    min-height: 120px;
+  }
+  .affix .nav {
+    min-height: 60px;
+  }
 }
 .nav__anchor {
   -moz-transition: color 0.5s;
   -o-transition: color 0.5s;
   -webkit-transition: color 0.5s;
   transition: color 0.5s;
-  left: 124px;
-  margin-bottom: 0;
-  position: absolute;
-  top: 28px;
+  display: inline-block;
 }
-.affix .nav__anchor {
-  color: #ae9cc8;
-  top: 0;
+@media only screen and (min-width: 768px) {
+  .nav__anchor {
+    left: 124px;
+    margin-bottom: 0;
+    position: absolute;
+    top: 37px;
+  }
+  .affix .nav__anchor {
+    color: #ae9cc8;
+    top: 7px;
+  }
 }
 .nav__anchor > li {
-  -moz-transition: all 1s;
-  -o-transition: all 1s;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-  display: inline;
+  display: none;
 }
-.nav__anchor > li.active {
-  color: white !important;
-  background-color: #3d1e67;
-  padding: 0.59091em 0;
+@media only screen and (min-width: 768px) {
+  .nav__anchor > li {
+    -moz-transition: box-shadow background-color 1s;
+    -o-transition: box-shadow background-color 1s;
+    -webkit-transition: box-shadow background-color;
+    -webkit-transition-delay: 1s;
+    transition: box-shadow background-color 1s;
+    -moz-transition: color 0.5s;
+    -o-transition: color 0.5s;
+    -webkit-transition: color 0.5s;
+    transition: color 0.5s;
+    display: inline-block;
+    line-height: 0.8;
+    vertical-align: middle;
+  }
+  .nav__anchor > li.active {
+    -moz-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+    box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+    background-color: #e0cb00;
+    color: #3d1e67;
+  }
+}
+.nav__anchor--js {
+  display: inline-block;
+}
+.nav__anchor--js:before {
+  font-size: 33px;
+  font-size: 1.65rem;
+  color: white;
+  content: "\f0c9";
+  margin: 0.39394em 0;
+}
+@media only screen and (min-width: 768px) {
+  .nav__anchor--js {
+    display: none;
+  }
 }
 .nav__anchor--who {
   font-family: Arial, sans-serif;
   font-size: 26px;
   font-size: 1.3rem;
-  line-height: 0.8;
-  -moz-transition: all 1s;
-  -o-transition: all 1s;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-  display: inline-block;
+  -moz-transition: box-shadow background-color 1s;
+  -o-transition: box-shadow background-color 1s;
+  -webkit-transition: box-shadow background-color;
+  -webkit-transition-delay: 1s;
+  transition: box-shadow background-color 1s;
+  -moz-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+  display: block;
   padding: 0.5em;
-  vertical-align: middle;
 }
 .wf-loading .nav__anchor--who {
   visibility: hidden;
@@ -2275,20 +2315,27 @@ h2 {
   font-family: Molengo;
 }
 .nav__anchor--who:active, .nav__anchor--who:focus, .nav__anchor--who:hover {
-  background-color: #3d1e67;
+  -moz-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  background-color: #e0cb00;
+  color: #3d1e67;
 }
 .nav__anchor--what {
   font-family: Arial, sans-serif;
   font-size: 26px;
   font-size: 1.3rem;
-  line-height: 0.8;
-  -moz-transition: all 1s;
-  -o-transition: all 1s;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-  display: inline-block;
+  -moz-transition: box-shadow background-color 1s;
+  -o-transition: box-shadow background-color 1s;
+  -webkit-transition: box-shadow background-color;
+  -webkit-transition-delay: 1s;
+  transition: box-shadow background-color 1s;
+  -moz-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+  display: block;
   padding: 0.5em;
-  vertical-align: middle;
 }
 .wf-loading .nav__anchor--what {
   visibility: hidden;
@@ -2297,20 +2344,27 @@ h2 {
   font-family: Molengo;
 }
 .nav__anchor--what:active, .nav__anchor--what:focus, .nav__anchor--what:hover {
-  background-color: #3d1e67;
+  -moz-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  background-color: #e0cb00;
+  color: #3d1e67;
 }
 .nav__anchor--when {
   font-family: Arial, sans-serif;
   font-size: 26px;
   font-size: 1.3rem;
-  line-height: 0.8;
-  -moz-transition: all 1s;
-  -o-transition: all 1s;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-  display: inline-block;
+  -moz-transition: box-shadow background-color 1s;
+  -o-transition: box-shadow background-color 1s;
+  -webkit-transition: box-shadow background-color;
+  -webkit-transition-delay: 1s;
+  transition: box-shadow background-color 1s;
+  -moz-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+  display: block;
   padding: 0.5em;
-  vertical-align: middle;
 }
 .wf-loading .nav__anchor--when {
   visibility: hidden;
@@ -2319,20 +2373,27 @@ h2 {
   font-family: Molengo;
 }
 .nav__anchor--when:active, .nav__anchor--when:focus, .nav__anchor--when:hover {
-  background-color: #3d1e67;
+  -moz-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  background-color: #e0cb00;
+  color: #3d1e67;
 }
 .nav__anchor--where {
   font-family: Arial, sans-serif;
   font-size: 26px;
   font-size: 1.3rem;
-  line-height: 0.8;
-  -moz-transition: all 1s;
-  -o-transition: all 1s;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-  display: inline-block;
+  -moz-transition: box-shadow background-color 1s;
+  -o-transition: box-shadow background-color 1s;
+  -webkit-transition: box-shadow background-color;
+  -webkit-transition-delay: 1s;
+  transition: box-shadow background-color 1s;
+  -moz-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+  display: block;
   padding: 0.5em;
-  vertical-align: middle;
 }
 .wf-loading .nav__anchor--where {
   visibility: hidden;
@@ -2341,20 +2402,27 @@ h2 {
   font-family: Molengo;
 }
 .nav__anchor--where:active, .nav__anchor--where:focus, .nav__anchor--where:hover {
-  background-color: #3d1e67;
+  -moz-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  background-color: #e0cb00;
+  color: #3d1e67;
 }
 .nav__anchor--why {
   font-family: Arial, sans-serif;
   font-size: 26px;
   font-size: 1.3rem;
-  line-height: 0.8;
-  -moz-transition: all 1s;
-  -o-transition: all 1s;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-  display: inline-block;
+  -moz-transition: box-shadow background-color 1s;
+  -o-transition: box-shadow background-color 1s;
+  -webkit-transition: box-shadow background-color;
+  -webkit-transition-delay: 1s;
+  transition: box-shadow background-color 1s;
+  -moz-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+  display: block;
   padding: 0.5em;
-  vertical-align: middle;
 }
 .wf-loading .nav__anchor--why {
   visibility: hidden;
@@ -2363,20 +2431,27 @@ h2 {
   font-family: Molengo;
 }
 .nav__anchor--why:active, .nav__anchor--why:focus, .nav__anchor--why:hover {
-  background-color: #3d1e67;
+  -moz-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  background-color: #e0cb00;
+  color: #3d1e67;
 }
 .nav__anchor--how {
   font-family: Arial, sans-serif;
   font-size: 26px;
   font-size: 1.3rem;
-  line-height: 0.8;
-  -moz-transition: all 1s;
-  -o-transition: all 1s;
-  -webkit-transition: all 1s;
-  transition: all 1s;
-  display: inline-block;
+  -moz-transition: box-shadow background-color 1s;
+  -o-transition: box-shadow background-color 1s;
+  -webkit-transition: box-shadow background-color;
+  -webkit-transition-delay: 1s;
+  transition: box-shadow background-color 1s;
+  -moz-transition: color 0.5s;
+  -o-transition: color 0.5s;
+  -webkit-transition: color 0.5s;
+  transition: color 0.5s;
+  display: block;
   padding: 0.5em;
-  vertical-align: middle;
 }
 .wf-loading .nav__anchor--how {
   visibility: hidden;
@@ -2385,11 +2460,15 @@ h2 {
   font-family: Molengo;
 }
 .nav__anchor--how:active, .nav__anchor--how:focus, .nav__anchor--how:hover {
-  background-color: #3d1e67;
+  -moz-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
+  background-color: #e0cb00;
+  color: #3d1e67;
 }
 .nav__logo {
-  font: normal normal normal 52px/0.8 Arial, sans-serif;
-  font-size: 2.6rem;
+  font: normal normal normal 31px/0.8 Arial, sans-serif;
+  font-size: 1.55rem;
   letter-spacing: -1px;
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
   -moz-transition: font-size 0.75s;
@@ -2397,7 +2476,6 @@ h2 {
   -webkit-transition: font-size 0.75s;
   transition: font-size 0.75s;
   display: inline-block;
-  margin: 0.5em 0;
   vertical-align: middle;
 }
 .wf-loading .nav__logo {
@@ -2406,40 +2484,34 @@ h2 {
 .wf-active .nav__logo {
   font-family: Molengo;
 }
-.affix .nav__logo {
+@media only screen and (min-width: 768px) {
+  .nav__logo {
+    font-size: 52px;
+    font-size: 2.6rem;
+    left: 0;
+    position: absolute;
+    top: 19px;
+  }
+  .affix .nav__logo {
+    font-size: 31px;
+    font-size: 1.55rem;
+    left: 50px;
+    margin: 0;
+    position: absolute;
+    top: 7px;
+  }
+}
+
+.tag-line {
   font-size: 31px;
   font-size: 1.55rem;
-  left: 50px;
-  margin: 0;
-  position: absolute;
-  top: 7px;
-}
-.nav__tag-line {
-  font-size: 10px;
-  font-size: 0.5rem;
   line-height: 1;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-  -moz-transition: color 1.25s;
-  -o-transition: color 1.25s;
-  -webkit-transition: color 1.25s;
-  transition: color 1.25s;
-  bottom: 28px;
-  color: #ae9cc8;
-  left: 134px;
-  margin-bottom: 0;
-  position: absolute;
-  text-transform: uppercase;
+  list-style: outside square;
+  margin-bottom: 0.83871em;
+  padding-left: 0.83871em;
 }
-.affix .nav__tag-line {
-  bottom: 1px;
-  color: #f7f7f7;
-}
-.nav__tag-line > li {
-  display: inline;
-  padding-right: 2.6em;
-}
-.nav__tag-line > li:last-child {
-  padding-right: 0;
+.wf-active .tag-line {
+  font-family: Molengo;
 }
 
 .footer {

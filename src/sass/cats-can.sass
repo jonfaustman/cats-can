@@ -10,8 +10,7 @@
     src: local('Molengo'), local('Molengo-Regular'), url(http://themes.googleusercontent.com/static/fonts/molengo/v5/2v3ScQ0eE96oPRRr3d-FjgLUuEpTyoUstqEm5AMlJo4.woff) format('woff')
 
 
-%box
-    +box-shadow(-1px 0px 3px rgba(0,0,0,.15), 3px 3px 3px rgba(0,0,0,.15))
+$box: -1px 0px 3px rgba(0,0,0,.15), 3px 3px 3px rgba(0,0,0,.15)
 
 html
     +font($family: unquote('Georgia, serif'), $size: $base-font-size, $height: $base-line-height, $shorthand: true)
@@ -42,8 +41,8 @@ h1
     $size: 41px
     +hN($size: $size)
     +text-shadow(3px 3px 3px rgba(0,0,0,.15))
-    border-bottom: 2px dashed shade($white, 12%)
-    color: shade($white, 6%)
+    border-bottom: 2px dashed $complement
+    color: $complement
     display: inline-block
     margin-bottom: em(15px, $base: $size)
     padding-bottom: em(4px, $base: $size)
@@ -77,9 +76,11 @@ h2
 
     @at-root &--inner
         +box-sizing(border-box)
-        margin: 0 auto
+        margin: 0 em($base-vertical-rhythm)
+        max-width: 767px
 
         +respond-to(tablet)
+            margin: 0 auto
             max-width: 768px
 
     @at-root &--content
@@ -89,7 +90,7 @@ h2
             border-bottom: 1px dashed shade($white, 12%)
 
     @at-root &--section
-        @extend %box
+        +box-shadow($box)
         background-color: tint($ksu-purple, 6%)
         margin-bottom: em($base-vertical-rhythm * 4)
         margin-top: em($base-vertical-rhythm * 2)
@@ -101,87 +102,107 @@ h2
 .nav
     +transition(min-height 1s)
     color: $white
-    min-height: 120px
     position: relative
 
-    .affix &
-        min-height: 60px
+    +respond-to(tablet)
+        min-height: 120px
+
+        .affix &
+            min-height: 60px
 
     @at-root &__anchor
         +transition(color .5s)
-        left: 124px
-        margin-bottom: 0
-        position: absolute
-        top: 28px
+        display: inline-block
 
-        .affix &
-            color: tint($ksu-purple, 54%)
-            top: 0
+        +respond-to(tablet)
+            left: 124px
+            margin-bottom: 0
+            position: absolute
+            top: 37px
+
+            .affix &
+                color: tint($ksu-purple, 54%)
+                top: 7px
 
         > li
-            +transition(all 1s)
-            display: inline
+            display: none
 
-            &.active
-                @extend %box
-                color: $white !important
-                background-color: shade($ksu-purple, 24%)
-                padding: em($base-vertical-rhythm / 2, $base: 22px) 0
+            +respond-to(tablet)
+                +transition(box-shadow background-color 1s)
+                +transition(color .5s)
+                display: inline-block
+                line-height: .8
+                vertical-align: middle
+
+                &.active
+                    +box-shadow($box)
+                    background-color: $complement
+                    color: shade($ksu-purple, 24%)
+
+        @at-root &--js
+
+            display: inline-block
+
+            &:before
+                $size: 33px
+                @extend .fa
+                +font($size: $size)
+                color: $white
+                content: "\f0c9"
+                margin: em($base-vertical-rhythm / 2, $base: $size) 0
+
+            +respond-to(tablet)
+                display: none
 
         $anchor-list: who what when where why how
         @each $anchor in $anchor-list
             @at-root &--#{$anchor}
                 $size: 26px
-                +font($size: $size, $family: unquote('Arial, sans-serif'), $height: .8)
-                +transition(all 1s)
+                +font($size: $size, $family: unquote('Arial, sans-serif'))
+                +transition(box-shadow background-color 1s)
+                +transition(color .5s)
                 +wf-font($wf-family: Molengo, $wf-hide: true)
-                display: inline-block
+                display: block
                 padding: em($base-vertical-rhythm / 2, $base: $size)
-                vertical-align: middle
 
                 &:active,
                 &:focus,
                 &:hover
-                    @extend %box
-                    background-color: shade($ksu-purple, 24%)
+                    +box-shadow($box)
+                    background-color: $complement
+                    color: shade($ksu-purple, 24%)
 
     @at-root &__logo
-        $size: 52px
+        $size: 31px
         +font($size: $size, $family: unquote('Arial, sans-serif'), $height: .8, $spacing: -1px, $shorthand: true)
         +wf-font($wf-family: Molengo, $wf-hide: true)
         +text-shadow(3px 3px 0px rgba(0,0,0,.25))
         +transition(font-size .75s)
         display: inline-block
-        margin: em($base-vertical-rhythm, $base: $size) 0
         vertical-align: middle
 
-        .affix &
-            +font($size: 31px)
-            left: 50px
-            margin: 0
+        +respond-to(tablet)
+            $size: 52px
+            +font($size: $size)
+            left: 0
             position: absolute
-            top: 7px
+            top: 19px
 
-    @at-root &__tag-line
-        +font($size: 10px, $height: 1)
-        +text-shadow(1px 1px 1px rgba(0,0,0,.15))
-        +transition(color 1.25s)
-        bottom: 28px
-        color: tint($ksu-purple, 54%)
-        left: 134px
-        margin-bottom: 0
-        position: absolute
-        text-transform: uppercase
+            .affix &
+                +font($size: 31px)
+                left: 50px
+                margin: 0
+                position: absolute
+                top: 7px
 
-        .affix &
-            bottom: 1px
-            color: shade($white, 3%)
 
-        > li
-            display: inline
-            padding-right: em($base-vertical-rhythm, $base: 10px)
-            &:last-child
-                padding-right: 0
+.tag-line
+    $size: 31px
+    +font($size: $size, $height: 1)
+    +wf-font($wf-family: Molengo)
+    list-style: outside square
+    margin-bottom: em($base-vertical-rhythm, $base: $size)
+    padding-left: em($base-vertical-rhythm, $base: $size)
 
 
 .footer
