@@ -2119,6 +2119,11 @@ html {
     font-size: 125%;
   }
 }
+@media print {
+  html {
+    font-size: 10pt;
+  }
+}
 
 a {
   -moz-transition: color 1s;
@@ -2130,6 +2135,16 @@ a {
 }
 a:active, a:focus, a:hover {
   color: white;
+}
+
+@media print {
+  blockquote,
+  dl,
+  ol,
+  p,
+  ul {
+    margin-bottom: 0.65em;
+  }
 }
 
 h1 {
@@ -2149,6 +2164,11 @@ h1 {
 .wf-active h1 {
   font-family: Molengo;
 }
+@media print {
+  h1 {
+    border-bottom: none;
+  }
+}
 
 h2 {
   font-family: Arial, sans-serif;
@@ -2163,6 +2183,11 @@ h2 {
 }
 .wf-active h2 {
   font-family: Molengo;
+}
+@media print {
+  h2 {
+    border-bottom: none;
+  }
 }
 
 .wrapper--nav {
@@ -2193,6 +2218,11 @@ h2 {
     margin-top: 198px;
   }
 }
+@media print {
+  .wrapper--nav.affix + .wrapper--content {
+    margin-top: 0;
+  }
+}
 .wrapper--inner, .wrapper--content {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -2209,6 +2239,12 @@ h2 {
 .wrapper--content a {
   border-bottom: 1px dashed #e0e0e0;
 }
+@media print {
+  .wrapper--content a {
+    color: black !important;
+    border-bottom: none;
+  }
+}
 .wrapper--section {
   -moz-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
   -webkit-box-shadow: -1px 0px 3px rgba(0, 0, 0, 0.15), 3px 3px 3px rgba(0, 0, 0, 0.15);
@@ -2223,25 +2259,37 @@ h2 {
     margin-bottom: 5.2em;
   }
 }
+@media print {
+  .wrapper--section {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
+  }
+}
 .wrapper--section:last-of-type {
   margin-bottom: 1.3em;
 }
 
 .nav {
-  -moz-transition: min-height 1s;
-  -o-transition: min-height 1s;
-  -webkit-transition: min-height 1s;
-  transition: min-height 1s;
   color: white;
   min-height: 60px;
   position: relative;
 }
 @media only screen and (min-width: 768px) {
   .nav {
+    -moz-transition: min-height 1s;
+    -o-transition: min-height 1s;
+    -webkit-transition: min-height 1s;
+    transition: min-height 1s;
     min-height: 120px;
   }
   .affix .nav {
     min-height: 60px;
+  }
+}
+@media print {
+  .nav {
+    display: none;
   }
 }
 .nav--js-open {
@@ -2554,17 +2602,39 @@ h2 {
 .wf-active .tag-line {
   font-family: Molengo;
 }
+@media print {
+  .tag-line {
+    font-size: inherit;
+  }
+}
 
 .footer {
   font-size: 0.65rem;
   margin-top: 6em;
   position: relative;
 }
+@media print {
+  .footer {
+    margin-top: 0;
+    position: static;
+  }
+}
 .footer__nav {
   font-size: 1.95rem;
   position: absolute;
   right: 0;
   top: -52px;
+}
+@media print {
+  .footer__nav {
+    font-size: inherit;
+    position: static;
+  }
+}
+@media print {
+  .footer > p {
+    display: none;
+  }
 }
 
 .br {
@@ -2580,4 +2650,66 @@ h2 {
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999999;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+
+  .pr-hide {
+    display: none;
+  }
 }

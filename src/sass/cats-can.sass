@@ -17,8 +17,12 @@ html
     background-color: tint($ksu-purple, 12%)
     color: shade($white, 12%)
     min-width: em(320px)
+
     +respond-to(tablet)
         font-size: percentage(20px/16px)
+
+    @media print
+        font-size: 10pt
 
 a
     +transition(color 1s)
@@ -37,6 +41,9 @@ p,
 ul
     @extend %base-vertical-rhythm
 
+    @media print
+        margin-bottom: em($base-vertical-rhythm / 2)
+
 
 h1
     $size: 41px
@@ -48,6 +55,9 @@ h1
     margin-bottom: em(15px, $base: $size)
     padding-bottom: em(4px, $base: $size)
 
+    @media print
+        border-bottom: none
+
 
 h2
     $size: 33px
@@ -55,6 +65,9 @@ h2
     +text-shadow(1px 1px 3px rgba(0,0,0,.15))
     color: shade($white, 9%)
     margin-bottom: em($base-vertical-rhythm, $base: $size)
+
+    @media print
+        border-bottom: none
 
 
 .wrapper
@@ -75,9 +88,12 @@ h2
             + .wrapper--content
                 margin-top: 138px
 
-            +respond-to(tablet)
-                + .wrapper--content
+                +respond-to(tablet)
                     margin-top: 198px
+
+                @media print
+                    margin-top: 0
+
 
     @at-root &--inner
         +box-sizing(border-box)
@@ -94,6 +110,10 @@ h2
         a
             border-bottom: 1px dashed shade($white, 12%)
 
+            @media print
+                color: #000 !important
+                border-bottom: none
+
     @at-root &--section
         +box-shadow($box)
         background-color: tint($ksu-purple, 6%)
@@ -104,20 +124,28 @@ h2
         +respond-to(tablet)
             margin-bottom: em($base-vertical-rhythm * 4)
 
+        @media print
+            margin-bottom: 0
+            margin-top: 0
+            padding: 0
+
         &:last-of-type
             margin-bottom: em($base-vertical-rhythm)
 
 .nav
-    +transition(min-height 1s)
     color: $white
     min-height: 60px
     position: relative
 
     +respond-to(tablet)
+        +transition(min-height 1s)
         min-height: 120px
 
         .affix &
             min-height: 60px
+
+    @media print
+        display: none
 
     @at-root &--js-open
         min-height: 241px
@@ -227,17 +255,32 @@ h2
     margin-bottom: em($base-vertical-rhythm, $base: $size)
     padding-left: em($base-vertical-rhythm, $base: $size)
 
+    @media print
+        font-size: inherit
+
 
 .footer
     +font($size: 13px)
     margin-top: em($base-vertical-rhythm * 3, $base: 13px)
     position: relative
 
+    @media print
+        margin-top: 0
+        position: static
+
     @at-root &__nav
         +font($size: 39px)
         position: absolute
         right: 0
         top: -($base-vertical-rhythm * 2)
+
+        @media print
+            font-size: inherit
+            position: static
+
+    > p
+        @media print
+            display: none
 
 
 .br
@@ -252,3 +295,52 @@ h2
     padding: 0
     position: absolute
     width: 1px
+
+
+@media print
+    *
+        background: transparent !important
+        color: #000 !important
+        box-shadow: none !important
+        text-shadow: none !important
+
+    a,
+    a:visited
+        text-decoration: underline
+
+    a[href]:after
+        content: " (" attr(href) ")"
+
+    abbr[title]:after
+        content: " (" attr(title) ")"
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after
+        content: ""
+
+    pre,
+    blockquote
+        border: 1px solid #999
+        page-break-inside: avoid
+
+    thead
+        display: table-header-group
+
+    tr,
+    img
+        page-break-inside: avoid
+    img
+        max-width: 100% !important
+
+    p,
+    h2,
+    h3
+        orphans: 3
+        widows: 3
+
+    h2,
+    h3
+        page-break-after: avoid
+
+    .pr-hide
+        display: none
