@@ -1,7 +1,8 @@
 .wf-loading {
   visibility: hidden;
 }
-.no-js .wf-loading {
+
+.no-js.wf-loading {
   visibility: visible;
 }
 
@@ -2161,9 +2162,6 @@ h1 {
   margin-bottom: 0.36585em;
   padding-bottom: 0.09756em;
 }
-.wf-loading h1 {
-  visibility: hidden;
-}
 .wf-active h1 {
   font-family: Molengo;
 }
@@ -2180,9 +2178,6 @@ h2 {
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
   color: #e8e8e8;
   margin-bottom: 0.78788em;
-}
-.wf-loading h2 {
-  visibility: hidden;
 }
 .wf-active h2 {
   font-family: Molengo;
