@@ -1,6 +1,9 @@
 .wf-loading
     visibility: hidden
 
+    .no-js &
+        visibility: visible
+
 @import base
 
 @font-face
@@ -208,7 +211,7 @@ h2
                 +font($size: $size, $family: unquote('Arial, sans-serif'))
                 +transition(box-shadow background-color 1s)
                 +transition(color .5s)
-                +wf-font($wf-family: Molengo, $wf-hide: true)
+                +wf-font($wf-family: Molengo)
                 display: block
                 padding: em($base-vertical-rhythm / 4, $base: $size) em($base-vertical-rhythm / 2, $base: $size)
 
@@ -225,7 +228,7 @@ h2
     @at-root &__logo
         $size: 31px
         +font($size: $size, $family: unquote('Arial, sans-serif'), $height: .8, $spacing: -1px, $shorthand: true)
-        +wf-font($wf-family: Molengo, $wf-hide: true)
+        +wf-font($wf-family: Molengo)
         +text-shadow(3px 3px 0px rgba(0,0,0,.25))
         +transition(font-size .75s)
         display: inline-block

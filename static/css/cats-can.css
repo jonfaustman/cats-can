@@ -1,6 +1,9 @@
 .wf-loading {
   visibility: hidden;
 }
+.no-js .wf-loading {
+  visibility: visible;
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -2375,9 +2378,6 @@ h2 {
   display: block;
   padding: 0.25em 0.5em;
 }
-.wf-loading .nav__anchor--who {
-  visibility: hidden;
-}
 .wf-active .nav__anchor--who {
   font-family: Molengo;
 }
@@ -2407,9 +2407,6 @@ h2 {
   transition: color 0.5s;
   display: block;
   padding: 0.25em 0.5em;
-}
-.wf-loading .nav__anchor--what {
-  visibility: hidden;
 }
 .wf-active .nav__anchor--what {
   font-family: Molengo;
@@ -2441,9 +2438,6 @@ h2 {
   display: block;
   padding: 0.25em 0.5em;
 }
-.wf-loading .nav__anchor--when {
-  visibility: hidden;
-}
 .wf-active .nav__anchor--when {
   font-family: Molengo;
 }
@@ -2473,9 +2467,6 @@ h2 {
   transition: color 0.5s;
   display: block;
   padding: 0.25em 0.5em;
-}
-.wf-loading .nav__anchor--where {
-  visibility: hidden;
 }
 .wf-active .nav__anchor--where {
   font-family: Molengo;
@@ -2507,9 +2498,6 @@ h2 {
   display: block;
   padding: 0.25em 0.5em;
 }
-.wf-loading .nav__anchor--why {
-  visibility: hidden;
-}
 .wf-active .nav__anchor--why {
   font-family: Molengo;
 }
@@ -2540,9 +2528,6 @@ h2 {
   display: block;
   padding: 0.25em 0.5em;
 }
-.wf-loading .nav__anchor--how {
-  visibility: hidden;
-}
 .wf-active .nav__anchor--how {
   font-family: Molengo;
 }
@@ -2570,9 +2555,6 @@ h2 {
   left: 0;
   position: absolute;
   top: 6px;
-}
-.wf-loading .nav__logo {
-  visibility: hidden;
 }
 .wf-active .nav__logo {
   font-family: Molengo;
