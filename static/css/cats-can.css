@@ -2131,7 +2131,6 @@ html {
 
 a {
   -moz-transition: color 1s;
-  -o-transition: color 1s;
   -webkit-transition: color 1s;
   transition: color 1s;
   color: inherit;
@@ -2149,6 +2148,16 @@ a:active, a:focus, a:hover {
   ul {
     margin-bottom: 0.65em;
   }
+}
+
+blockquote {
+  text-shadow: 1px 1px 0 rgba(63, 57, 0, 0.25);
+  background-color: #e0cb00;
+  color: #3f3900;
+  padding: 1.3em 1.3em 0.65em 1.3em;
+}
+blockquote a {
+  border-bottom-color: #3f3900 !important;
 }
 
 h1 {
@@ -2193,7 +2202,6 @@ h2 {
   -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
   -moz-transition: background-color 1s;
-  -o-transition: background-color 1s;
   -webkit-transition: background-color 1s;
   transition: background-color 1s;
   background-color: #4e2683;
@@ -2276,7 +2284,6 @@ h2 {
 @media only screen and (min-width: 768px) {
   .nav {
     -moz-transition: min-height 1s;
-    -o-transition: min-height 1s;
     -webkit-transition: min-height 1s;
     transition: min-height 1s;
     min-height: 120px;
@@ -2295,7 +2302,6 @@ h2 {
 }
 .nav__anchor {
   -moz-transition: color 0.5s;
-  -o-transition: color 0.5s;
   -webkit-transition: color 0.5s;
   transition: color 0.5s;
   display: none;
@@ -2321,13 +2327,10 @@ h2 {
 }
 @media only screen and (min-width: 768px) {
   .nav__anchor > li {
-    -moz-transition: box-shadow background-color 1s;
-    -o-transition: box-shadow background-color 1s;
-    -webkit-transition: box-shadow background-color;
-    -webkit-transition-delay: 1s;
-    transition: box-shadow background-color 1s;
+    -moz-transition: box-shadow 1s background-color;
+    -webkit-transition: box-shadow 1s background-color;
+    transition: box-shadow 1s background-color;
     -moz-transition: color 0.5s;
-    -o-transition: color 0.5s;
     -webkit-transition: color 0.5s;
     transition: color 0.5s;
     display: inline-block;
@@ -2361,13 +2364,10 @@ h2 {
 .nav__anchor--who {
   font-family: Arial, sans-serif;
   font-size: 1.3rem;
-  -moz-transition: box-shadow background-color 1s;
-  -o-transition: box-shadow background-color 1s;
-  -webkit-transition: box-shadow background-color;
-  -webkit-transition-delay: 1s;
-  transition: box-shadow background-color 1s;
+  -moz-transition: box-shadow 1s background-color;
+  -webkit-transition: box-shadow 1s background-color;
+  transition: box-shadow 1s background-color;
   -moz-transition: color 0.5s;
-  -o-transition: color 0.5s;
   -webkit-transition: color 0.5s;
   transition: color 0.5s;
   display: block;
@@ -2391,13 +2391,10 @@ h2 {
 .nav__anchor--what {
   font-family: Arial, sans-serif;
   font-size: 1.3rem;
-  -moz-transition: box-shadow background-color 1s;
-  -o-transition: box-shadow background-color 1s;
-  -webkit-transition: box-shadow background-color;
-  -webkit-transition-delay: 1s;
-  transition: box-shadow background-color 1s;
+  -moz-transition: box-shadow 1s background-color;
+  -webkit-transition: box-shadow 1s background-color;
+  transition: box-shadow 1s background-color;
   -moz-transition: color 0.5s;
-  -o-transition: color 0.5s;
   -webkit-transition: color 0.5s;
   transition: color 0.5s;
   display: block;
@@ -2421,13 +2418,10 @@ h2 {
 .nav__anchor--when {
   font-family: Arial, sans-serif;
   font-size: 1.3rem;
-  -moz-transition: box-shadow background-color 1s;
-  -o-transition: box-shadow background-color 1s;
-  -webkit-transition: box-shadow background-color;
-  -webkit-transition-delay: 1s;
-  transition: box-shadow background-color 1s;
+  -moz-transition: box-shadow 1s background-color;
+  -webkit-transition: box-shadow 1s background-color;
+  transition: box-shadow 1s background-color;
   -moz-transition: color 0.5s;
-  -o-transition: color 0.5s;
   -webkit-transition: color 0.5s;
   transition: color 0.5s;
   display: block;
@@ -2451,13 +2445,10 @@ h2 {
 .nav__anchor--where {
   font-family: Arial, sans-serif;
   font-size: 1.3rem;
-  -moz-transition: box-shadow background-color 1s;
-  -o-transition: box-shadow background-color 1s;
-  -webkit-transition: box-shadow background-color;
-  -webkit-transition-delay: 1s;
-  transition: box-shadow background-color 1s;
+  -moz-transition: box-shadow 1s background-color;
+  -webkit-transition: box-shadow 1s background-color;
+  transition: box-shadow 1s background-color;
   -moz-transition: color 0.5s;
-  -o-transition: color 0.5s;
   -webkit-transition: color 0.5s;
   transition: color 0.5s;
   display: block;
@@ -2481,13 +2472,10 @@ h2 {
 .nav__anchor--why {
   font-family: Arial, sans-serif;
   font-size: 1.3rem;
-  -moz-transition: box-shadow background-color 1s;
-  -o-transition: box-shadow background-color 1s;
-  -webkit-transition: box-shadow background-color;
-  -webkit-transition-delay: 1s;
-  transition: box-shadow background-color 1s;
+  -moz-transition: box-shadow 1s background-color;
+  -webkit-transition: box-shadow 1s background-color;
+  transition: box-shadow 1s background-color;
   -moz-transition: color 0.5s;
-  -o-transition: color 0.5s;
   -webkit-transition: color 0.5s;
   transition: color 0.5s;
   display: block;
@@ -2511,13 +2499,10 @@ h2 {
 .nav__anchor--how {
   font-family: Arial, sans-serif;
   font-size: 1.3rem;
-  -moz-transition: box-shadow background-color 1s;
-  -o-transition: box-shadow background-color 1s;
-  -webkit-transition: box-shadow background-color;
-  -webkit-transition-delay: 1s;
-  transition: box-shadow background-color 1s;
+  -moz-transition: box-shadow 1s background-color;
+  -webkit-transition: box-shadow 1s background-color;
+  transition: box-shadow 1s background-color;
   -moz-transition: color 0.5s;
-  -o-transition: color 0.5s;
   -webkit-transition: color 0.5s;
   transition: color 0.5s;
   display: block;
@@ -2543,7 +2528,6 @@ h2 {
   letter-spacing: -1px;
   text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.25);
   -moz-transition: font-size 0.75s;
-  -o-transition: font-size 0.75s;
   -webkit-transition: font-size 0.75s;
   transition: font-size 0.75s;
   display: inline-block;

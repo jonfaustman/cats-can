@@ -48,6 +48,16 @@ ul
         margin-bottom: em($base-vertical-rhythm / 2)
 
 
+blockquote
+    +text-shadow(1px 1px 0 (rgba(shade($complement, 71.5%), .25)))
+    background-color: $complement
+    color: shade($complement, 71.5%)
+    padding: em($base-vertical-rhythm) em($base-vertical-rhythm) em($base-vertical-rhythm / 2) em($base-vertical-rhythm)
+
+    a
+        border-bottom-color: shade($complement, 71.5%) !important
+
+
 h1
     $size: 41px
     +hN($size: $size)
