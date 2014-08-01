@@ -48,6 +48,13 @@ ul
         margin-bottom: em($base-vertical-rhythm / 2)
 
 
+ol
+    li
+        @extend %base-vertical-rhythm
+        list-style-type: decimal
+        margin-left: em($base-vertical-rhythm)
+
+
 blockquote
     +text-shadow(1px 1px 0 (rgba(shade($complement, 71.5%), .25)))
     background-color: $complement
@@ -58,7 +65,8 @@ blockquote
         border-bottom-color: shade($complement, 71.5%) !important
 
 
-h1
+h1,
+.alpha
     $size: 41px
     +hN($size: $size)
     +text-shadow(3px 3px 3px rgba(0,0,0,.15))
@@ -72,8 +80,21 @@ h1
         border-bottom: none
 
 
-h2
+h2,
+.beta
     $size: 33px
+    +hN($size: $size)
+    +text-shadow(1px 1px 3px rgba(0,0,0,.15))
+    color: shade($white, 9%)
+    margin-bottom: em($base-vertical-rhythm, $base: $size)
+
+    @media print
+        border-bottom: none
+
+
+h3,
+.gamma
+    $size: 26px
     +hN($size: $size)
     +text-shadow(1px 1px 3px rgba(0,0,0,.15))
     color: shade($white, 9%)
@@ -294,6 +315,10 @@ h2
     > p
         @media print
             display: none
+
+
+.amp
+    +wf-font($wf-family: Molengo)
 
 
 .br

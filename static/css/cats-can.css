@@ -2098,11 +2098,14 @@ blockquote,
 dl,
 ol,
 p,
-ul {
+ul, ol li {
   margin-bottom: 1.3em;
 }
 
-h1, h2 {
+h1,
+.alpha, h2,
+.beta, h3,
+.gamma {
   text-rendering: optimizeLegibility;
 }
 
@@ -2150,6 +2153,11 @@ a:active, a:focus, a:hover {
   }
 }
 
+ol li {
+  list-style-type: decimal;
+  margin-left: 1.3em;
+}
+
 blockquote {
   text-shadow: 1px 1px 0 rgba(63, 57, 0, 0.25);
   background-color: #e0cb00;
@@ -2160,7 +2168,8 @@ blockquote a {
   border-bottom-color: #3f3900 !important;
 }
 
-h1 {
+h1,
+.alpha {
   font-family: Arial, sans-serif;
   font-size: 2.05rem;
   line-height: 1;
@@ -2171,16 +2180,19 @@ h1 {
   margin-bottom: 0.36585em;
   padding-bottom: 0.09756em;
 }
-.wf-active h1 {
+.wf-active h1, .wf-active
+.alpha {
   font-family: Molengo;
 }
 @media print {
-  h1 {
+  h1,
+  .alpha {
     border-bottom: none;
   }
 }
 
-h2 {
+h2,
+.beta {
   font-family: Arial, sans-serif;
   font-size: 1.65rem;
   line-height: 1;
@@ -2188,11 +2200,33 @@ h2 {
   color: #e8e8e8;
   margin-bottom: 0.78788em;
 }
-.wf-active h2 {
+.wf-active h2, .wf-active
+.beta {
   font-family: Molengo;
 }
 @media print {
-  h2 {
+  h2,
+  .beta {
+    border-bottom: none;
+  }
+}
+
+h3,
+.gamma {
+  font-family: Arial, sans-serif;
+  font-size: 1.3rem;
+  line-height: 1;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+  color: #e8e8e8;
+  margin-bottom: 1em;
+}
+.wf-active h3, .wf-active
+.gamma {
+  font-family: Molengo;
+}
+@media print {
+  h3,
+  .gamma {
     border-bottom: none;
   }
 }
@@ -2596,6 +2630,10 @@ h2 {
   .footer > p {
     display: none;
   }
+}
+
+.wf-active .amp {
+  font-family: Molengo;
 }
 
 .br {
